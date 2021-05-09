@@ -6,6 +6,22 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABAASE_URI'] = 'sqlite:///switch.db'
 db = SQLAlchemy(app)
 
+class Switches (db.Model):
+    __tablename__ = "Switches"
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String())
+    brand = db.Column(db.String())
+    style = db.Column(db.String())
+    color = db.Column(db.String())
+    spring = db.Column(db.String())
+
+class Prebuilts (db.Model):
+    __tablename__ = "Prebuilts"
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String())
+    layout = db.Column(db.String())
+    brand = db.Column(db.String())
+
 @app.route('/')
 def home():
     return render_template("home.html", page_title="HOME")
