@@ -4,6 +4,11 @@ html {
     color: white;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 .header {
     font-size: 150%;
     text-align: center;
