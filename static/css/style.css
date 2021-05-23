@@ -1,0 +1,19 @@
+html {
+    font-family: "Segoe UI";
+    background-color: rgb(16, 17, 20);
+    color: white;
+}
+
+.header {
+    font-size: 150%;
+    text-align: center;
+}
+
+.navigation {
+    text-align: center;
+    font-size: 140%;
+}
+
+.footer {
+    text-align: center;
+}
