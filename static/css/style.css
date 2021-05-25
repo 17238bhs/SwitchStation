@@ -10,26 +10,27 @@ a {
 }
 
 .header {
-    height: 8%;
-    width: 50%;
-    font-size: 150%;
+    height: 4.5rem;
+    width: 28.3rem;
+    font-size: 1.5rem;
     text-align: center;
     border-bottom-style: solid;
-    border-width: 8px;
+    border-width: 0.5rem;
     border-color: rgb(231, 167, 156);
 }
 
 .header-box {
-    padding-left: 33%;
+    padding-left: 27.8rem;
 }
 
 .navigation {
     text-align: center;
-    font-size: 140%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    font-size: 1.4rem;
+    word-spacing: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border-bottom-style: solid;
-    border-width: 35px;
+    border-width: 3rem;
     border-color: rgb(231, 167, 156);
 }
 
