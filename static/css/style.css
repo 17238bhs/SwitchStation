@@ -11,11 +11,16 @@ a {
 
 .header {
     height: 8%;
+    width: 50%;
     font-size: 150%;
     text-align: center;
     border-bottom-style: solid;
     border-width: 8px;
     border-color: rgb(231, 167, 156);
+}
+
+.header-box {
+    padding-left: 33%;
 }
 
 .navigation {
