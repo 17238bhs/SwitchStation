@@ -17,10 +17,7 @@ a {
     border-bottom-style: solid;
     border-width: 0.5rem;
     border-color: rgb(231, 167, 156);
-}
-
-.header-box {
-    padding-left: 27.8rem;
+    margin: 0 auto; /*positions the header in the center*/
 }
 
 .navigation {
