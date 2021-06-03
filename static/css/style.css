@@ -71,3 +71,17 @@ a {
     transform: scale(1.05, 1.05);
     transition-duration: 1s;
 }
+
+.all_switches {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.switch_card {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.644);
+}

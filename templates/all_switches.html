@@ -2,9 +2,10 @@
 {% extends 'layout.html' %}
 {% block content %}
 <div class="all_switches">
-    a
+    {% for switch in switches %}
+        <div class="switch_card">
+            {{switch.name}}
+        </div>
+    {% endfor %}
 </div>
-{% for switch in switches %}
-    {{switch.name}}
-{% endfor %}
 {% endblock %}

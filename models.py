@@ -4,7 +4,7 @@ class Switch (db.Model):
     __tablename__ = "Switch"
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String())
-    brand = db.Column(db.String())
+    manufacturer = db.Column(db.String())
     style = db.Column(db.String())
     color = db.Column(db.String())
     description = db.Column(db.String())
