@@ -10,12 +10,12 @@ import models
 
 @app.route('/')
 def home():
-    
     return render_template("home.html", page_title="Home")
 
 @app.route('/all_switches')
 def all_switches():
-    return render_template ("all_switches.html", page_title="All Switches")
+    results = models.Switch.query.all()
+    return render_template ("all_switches.html", page_title="All Switches", switches = results)
 
 @app.route('/switch/<int:id>')
 def switch(id):
