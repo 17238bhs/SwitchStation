@@ -3,9 +3,11 @@
 {% block content %}
 <div class="all_switches">
     {% for switch in switches %}
+    <a href="/switch/{{switch.id}}">
         <div class="switch_card">
             {{switch.name}}
         </div>
+    </a>
     {% endfor %}
 </div>
 {% endblock %}
