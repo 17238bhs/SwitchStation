@@ -25,6 +25,10 @@ a {
     margin: 0 auto; /*positions the header in the center*/
 }
 
+.header:hover {
+    text-decoration: none;
+}
+
 .navigation {
     text-align: center;
     font-size: 1.4rem;
@@ -89,7 +93,6 @@ a {
 }
 
 .switch_card:hover {
-    text-decoration: underline;
-    text-decoration-color: rgb(233, 169, 157);
-    text-decoration-thickness: 0.3rem;
+    color: rgb(233, 169, 157);
+    border-color: rgb(233, 169, 157);
 }
