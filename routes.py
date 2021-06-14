@@ -22,10 +22,5 @@ def switch(id):
     switch = models.Switch.query.filter_by(id=id).first_or_404()
     return render_template ("switch.html", page_title="Switches", switch = switch)
 
-#@app.route('/prebuilt/<int:id>')
-#def prebuilt(id):
-#    prebuilt = Prebuilt.query.filter_by(id=id).first_or_404()
-#    return render_template("prebuilts.html", page_title="Prebuilts", prebuilt = prebuilt)
-
 if __name__ == "__main__":
     app.run(port=3000)

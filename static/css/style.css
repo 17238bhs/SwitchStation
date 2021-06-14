@@ -17,6 +17,7 @@ a {
 .header {
     height: 4.5rem;
     width: 28.3rem;
+    font-size: 1.5rem;
     text-align: center;
     border-bottom-style: solid;
     border-width: 0.5rem;
@@ -73,14 +74,22 @@ a {
 
 .all_switches {
     display: grid;
-    grid-gap: 50px;
+    grid-gap: 1.5rem;
     grid-template-columns: auto auto auto;
-    padding: 10px;
+    padding: 1.5rem;
 }
 
 .switch_card {
     padding: 20px;
     font-size: 30px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.644);
+    border-style: solid;
+    border-color: white;
+    border-width: 0.35rem;
+}
+
+.switch_card:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(233, 169, 157);
+    text-decoration-thickness: 0.3rem;
 }
