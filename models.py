@@ -1,5 +1,8 @@
 from routes import db
 
+# clear table definitions held in memory by metadata object, allows us to declare them again
+db.metadata.clear()
+
 class Switch (db.Model):
     __tablename__ = "Switch"
     id = db.Column(db.Integer, primary_key = True)
@@ -8,6 +11,11 @@ class Switch (db.Model):
     style = db.Column(db.String())
     color = db.Column(db.String())
     description = db.Column(db.String())
+    cost = db.Column(db.Integer())
+    actuation = db.Column(db.Integer())
+    bottomout = db.Column(db.Integer())
+    pretravel = db.Column(db.Integer())
+    totaltravel = db.Column(db.Integer())
 
 class Prebuilt (db.Model):
     __tablename__ = "Prebuilt"
