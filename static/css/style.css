@@ -76,6 +76,10 @@ a {
     transition-duration: 1s;
 }
 
+.learn {
+    text-align: center;
+}
+
 .all_switches {
     display: grid;
     grid-gap: 1.5rem;
@@ -103,6 +107,15 @@ a {
     font-weight: bold;
 }
 
+.switch_description {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
+}
+
 .switch_info {
     text-align: center;
+    font-size: 1.15rem;
 }

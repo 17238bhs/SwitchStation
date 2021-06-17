@@ -12,6 +12,10 @@ import models
 def home():
     return render_template("home.html", page_title="Home")
 
+@app.route('/learn')
+def learn():
+    return render_template("learn.html", page_title="learn")
+
 @app.route('/all_switches')
 def all_switches():
     results = models.Switch.query.all()
