@@ -2,6 +2,11 @@ html {
     font-family: "Segoe UI";
     background-color: rgb(37, 34, 34);
     color: white;
+    text-align: center;
+}
+
+:root { /* used for css variables, makes it easier to get & read colours*/
+    --rosegold: rgb(233, 169, 157);
 }
 
 body {
@@ -18,10 +23,9 @@ a {
     height: 4.5rem;
     width: 28.3rem;
     font-size: 1.5rem;
-    text-align: center;
     border-bottom-style: solid;
     border-width: 0.5rem;
-    border-color: rgb(233, 169, 157);
+    border-color: var(--rosegold);
     margin: 0 auto; /*positions the header in the center*/
 }
 
@@ -30,24 +34,27 @@ a {
 }
 
 .navigation {
-    text-align: center;
     font-size: 1.4rem;
     word-spacing: 3rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom-style: solid; /*gives the bottom of the div a solid line as a border*/
     border-width: 2rem;
-    border-color: rgb(233, 169, 157);
+    border-color: var(--rosegold);
 }
 
 .footer {
-    text-align: center;
+    bottom: 0px;
+    left: 30%;
+    right: 30%;
+    font-size: 1.4rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.2rem;
 }
 .home {
     /*background-color: white;
     color: rgb(51, 49, 48);*/
     height: 75%;
-    text-align: center;
     padding-bottom: 3rem;
 }
 
@@ -56,13 +63,12 @@ a {
 }
 
 .more_button {  /* this section and the 2 below makes the link look like a button */
-    background-color: rgb(233, 169, 157);
+    background-color: var(--rosegold);
     color: white;
     padding: 11px 19px;
     margin-left: 10rem;
     margin-top: 30rem;
     font-size: 1.8rem;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     border: none;
@@ -71,13 +77,13 @@ a {
 }
 
 .more_button:hover {
-    background-color: rgb(233, 169, 157);
+    background-color: var(--rosegold);
     transform: scale(1.05, 1.05);
     transition-duration: 1s;
 }
 
 .learn {
-    text-align: center;
+    font-size: 1.2rem;
 }
 
 .all_switches {
@@ -90,25 +96,22 @@ a {
 .switch_card {
     padding: 20px;
     font-size: 30px;
-    text-align: center;
     border-style: solid;
     border-color: white;
     border-width: 0.35rem;
 }
 
 .switch_card:hover {
-    color: rgb(233, 169, 157);
-    border-color: rgb(233, 169, 157);
+    color: var(--rosegold);
+    border-color: var(--rosegold);
 }
 
 .switch_title {
     font-size: 3rem;
-    text-align: center;
     font-weight: bold;
 }
 
 .switch_description {
-    text-align: center;
     font-size: 1.2rem;
     padding: 1rem;
     padding-left: 15rem;
@@ -116,6 +119,119 @@ a {
 }
 
 .switch_info {
-    text-align: center;
     font-size: 1.15rem;
+}
+
+.cb-slideshow,
+.cb-slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+}
+.cb-slideshow:after { 
+    content: '';
+    background: transparent url(../images/pattern.png) repeat top left; 
+}
+
+.cb-slideshow li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute; /*remove these?*/
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 36s linear infinite 0s; 
+}
+
+.cb-slideshow li div { 
+    z-index: 1000;
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    color: #fff;
+    animation: titleAnimation 36s linear infinite 0s; 
+}
+.cb-slideshow li div h3 { 
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    font-size: 130px;
+    padding: 0;
+    line-height: 200px; 
+}
+
+.cb-slideshow li:nth-child(1) span { 
+    background-image: url(../images/olivia.png) 
+}
+.cb-slideshow li:nth-child(2) span { 
+    background-image: url(../images/darling.png);
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) span { 
+    background-image: url(../images/noel.png);
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) span { 
+    background-image: url(../images/striker.jpg);
+    animation-delay: 18s; 
+}
+.cb-slideshow li:nth-child(5) span { 
+    background-image: url(../images/mizu.jpg);
+    animation-delay: 24s; 
+}
+.cb-slideshow li:nth-child(6) span { 
+    background-image: url(../images/haku.jpg);
+    animation-delay: 30s; 
+}
+
+.cb-slideshow li:nth-child(2) div { 
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) div { 
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) div { 
+    animation-delay: 18s; 
+}
+.cb-slideshow li:nth-child(5) div { 
+    animation-delay: 24s; 
+}
+.cb-slideshow li:nth-child(6) div { 
+    animation-delay: 30s; 
+}
+
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+@keyframes titleAnimation { 
+    0% { opacity: 0 }
+    8% { opacity: 1 }
+    17% { opacity: 1 }
+    19% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+.no-cssanimations .cb-slideshow li span{
+	opacity: 1;
+}
+
+@media screen and (max-width: 1140px) { 
+    .cb-slideshow li div h3 { font-size: 140px }
+}
+@media screen and (max-width: 600px) { 
+    .cb-slideshow li div h3 { font-size: 80px }
 }
