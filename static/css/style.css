@@ -158,7 +158,7 @@ a {
     background-repeat: none;
     opacity: 0;
     z-index: -2;
-    animation: imageAnimation 36s linear infinite 0s; 
+    animation: imageAnimation 36s linear infinite 0s; /*animation lasts 36 seconds, runs in an infinite loop*/
 }
 
 .cb-slideshow li div { 
@@ -170,7 +170,7 @@ a {
     text-align: center;
     opacity: 0;
     color: #fff;
-    animation: titleAnimation 36s linear infinite 0s; 
+    animation: titleAnimation 36s linear infinite 0s; /*animation lasts 36 seconds, runs in an infinite loop*/
 }
 .cb-slideshow li div h3 { 
     font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
@@ -179,6 +179,7 @@ a {
     line-height: 200px; 
 }
 
+/*define the background images for the spans, along with the animation delay*/
 .cb-slideshow li:nth-child(1) span { 
     background-image: url(../images/olivia.png) 
 }
@@ -219,6 +220,7 @@ a {
     animation-delay: 30s; 
 }
 
+/*slideshow opacity values are changed at certain times to match the transition*/
 @keyframes imageAnimation { 
     0% { opacity: 0; animation-timing-function: ease-in; }
     8% { opacity: 1; animation-timing-function: ease-out; }
@@ -235,11 +237,12 @@ a {
     100% { opacity: 0 }
 }
 
+/*usedd for browsers which dont support animations, shows the last slideshow image with full opacity*/
 .no-cssanimations .cb-slideshow li span{
 	opacity: 1;
 }
 
-@media screen and (max-width: 1140px) { 
+@media screen and (max-width: 1140px) { /*changes the title font size when window is smaller*/
     .cb-slideshow li div h3 { font-size: 140px }
 }
 @media screen and (max-width: 600px) { 
