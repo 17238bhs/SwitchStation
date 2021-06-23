@@ -221,6 +221,7 @@ a {
 }
 
 /*slideshow opacity values are changed at certain times to match the transition*/
+/*
 @keyframes imageAnimation { 
     0% { opacity: 0; animation-timing-function: ease-in; }
     8% { opacity: 1; animation-timing-function: ease-out; }
@@ -228,13 +229,57 @@ a {
     25% { opacity: 0 }
     100% { opacity: 0 }
 }
+*/
+@keyframes imageAnimation { /*experimental animation, makes the slide images scale up and rotate*/
+	0% {
+	    opacity: 0;
+        animation-timing-function: ease-in;
+        transform: rotate(1deg);
+	}
+	8% {
+	    opacity: 1;
+	    transform: scale(1.05) rotate(1deg);
+	    animation-timing-function: ease-out;
+	}
+	17% {
+	    opacity: 1;
+	    transform: scale(1.1) rotate(1deg);
+	}
+	25% {
+	    opacity: 0;
+	    transform: scale(1.1) rotate(1deg);
+	}
+	100% { opacity: 0 }
+}
 
+/*
 @keyframes titleAnimation { 
     0% { opacity: 0 }
     8% { opacity: 1 }
     17% { opacity: 1 }
     19% { opacity: 0 }
     100% { opacity: 0 }
+}
+*/
+@keyframes titleAnimation { /*experimental animation makes slide titles slide in from the right and disappear by sliding to the left*/
+	0% {
+	    opacity: 0;
+	    transform: translateX(200px);
+	}
+	8% {
+	    opacity: 1;
+	    transform: translateX(0px);
+	}
+	17% {
+	    opacity: 1;
+	    transform: translateX(0px);
+	}
+	19% {
+	    opacity: 0;
+	    transform: translateX(-400px);
+	}
+	25% { opacity: 0 }
+	100% { opacity: 0 }
 }
 
 /*usedd for browsers which dont support animations, shows the last slideshow image with full opacity*/
