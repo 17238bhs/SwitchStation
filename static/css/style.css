@@ -33,6 +33,15 @@ a {
     text-decoration: none;
 }
 
+.header_back {
+    top: 0px;
+    position: fixed;
+    background-color: rgb(37, 34, 34);
+    height: 5rem;
+    width: 100%;
+    z-index: -1;
+}
+
 .navigation {
     font-size: 1.4rem;
     word-spacing: 3rem;
@@ -41,6 +50,7 @@ a {
     border-bottom-style: solid; /*gives the bottom of the div a solid line as a border*/
     border-width: 2rem;
     border-color: var(--rosegold);
+    background-color: rgb(37, 34, 34);
 }
 
 .footer {
@@ -129,11 +139,11 @@ a {
     height: 100%;
     top: 0px;
     left: 0px;
-    z-index: 0; 
+    z-index: -2; 
 }
 .cb-slideshow:after { 
     content: '';
-    background: transparent url(../images/pattern.png) repeat top left; 
+    background: transparent url(../images/pattern.png) repeat top left; /*adds a pattern filter over the images*/
 }
 
 .cb-slideshow li span { 
@@ -147,7 +157,7 @@ a {
     background-position: 50% 50%;
     background-repeat: none;
     opacity: 0;
-    z-index: 0;
+    z-index: -2;
     animation: imageAnimation 36s linear infinite 0s; 
 }
 
