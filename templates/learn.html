@@ -2,6 +2,20 @@
 {% extends 'layout.html' %}
 {% block content %}
 <div class="learn">
-    Why?
+    <div id="toc_container"> <!--table of contents for page-->
+        <p class="toc_title">Contents</p>
+        <ul class="toc_list">
+            <li><a href="#First_Point_Header">1 First Point Header</a> <!--clicking link brings user to the first point, etc-->
+                <ul>
+                    <li><a href="#First_Sub_Point_1">1.1 First Sub Point 1</a></li> <!--sub headings under the main header-->
+                    <li><a href="#First_Sub_Point_2">1.2 First Sub Point 2</a></li>
+                </ul>
+            </li>
+            <li><a href="#Second_Point_Header">2 Second Point Header</a></li>
+            <li><a href="#Third_Point_Header">3 Third Point Header</a></li>
+        </ul>
+    </div>
+    <div id="First_Point_Header">First Point Header</h2> <!--a-->
+
 </div>
 {% endblock %}
