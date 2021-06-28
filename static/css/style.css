@@ -297,19 +297,15 @@ a {
 
 #toc_container { /*table of contents on learn page*/
     background: rgb(37, 34, 34) none repeat scroll 0 0;
-    border: 1px solid #aaa;
+    border: 4px solid white;
     display: table;
-    font-size: 95%;
-    margin-bottom: 1em;
     padding: 20px;
     width: auto;
+    text-align: left;
+    margin: 1rem 4rem; /*1rem top padding, 4rem left padding*/
 }
 
 .toc_title {
     font-weight: 700;
     text-align: center;
-}
-
-#toc_container li, #toc_container ul, #toc_container ul li{ 
-    list-style: outside none none !important; /*removes the bulletpoints from the table
 }
