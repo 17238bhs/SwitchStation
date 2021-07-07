@@ -104,8 +104,8 @@ a {
 }
 
 .switch_card {
-    padding: 20px;
-    font-size: 30px;
+    padding: 1rem;
+    font-size: 2rem;
     border-style: solid;
     border-color: white;
     border-width: 0.35rem;
@@ -294,6 +294,31 @@ a {
 @media screen and (max-width: 600px) { 
     .cb-slideshow li div h3 { font-size: 80px }
 }
+
+.learn_header {
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.learn_left {
+    font-size: 1rem;
+    text-align: left;
+    padding-left: 4rem;
+}
+
+.learn_right {
+    font-size: 1rem;
+    text-align: right;
+    padding-right: 4rem;
+}
+
+.learn_right img {
+    object-fit: cover;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    float: right;  /* keeps the image to the left */
+}
+
 
 #toc_container { /*table of contents on learn page*/
     background: rgb(37, 34, 34) none repeat scroll 0 0;
