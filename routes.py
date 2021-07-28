@@ -36,5 +36,9 @@ def prebuilt(id):
     prebuilt = models.Prebuilt.query.filter_by(id=id).first_or_404()
     return render_template ("prebuilt.html", page_title="Prebuilts", prebuilt = prebuilt)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html")
+
 if __name__ == "__main__":
     app.run(port=3000)
