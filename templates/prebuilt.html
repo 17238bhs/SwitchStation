@@ -1,0 +1,16 @@
+<title>Switch Station - {{prebuilt.name}}</title>
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="switch_title">
+        {{prebuilt.name}}
+    </div>
+    <div class="switch_description">
+        {{prebuilt.description}}
+    </div>
+    <div class="switch_info">
+        {{prebuilt.layout}} Layout<br>
+        Brand: {{prebuilt.brand}}<br>
+        Hot-swap: {{prebuilt.hotswap}}<br>
+        RGB: {{prebuilt.rgb}}<br>
+    </div>
+{% endblock %}
