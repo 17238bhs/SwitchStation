@@ -2,7 +2,7 @@
 {% extends 'layout.html' %}
 {% block content %}
 <div class="all_switches">
-    {% for prebuilt in prebuilts %}
+    {% for prebuilt in prebuilts %} <!--for every entry in the prebuilt table-->
     <a href="/prebuilt/{{prebuilt.id}}">
         <div class="switch_card">
             {{prebuilt.name}}
