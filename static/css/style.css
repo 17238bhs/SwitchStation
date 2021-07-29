@@ -130,6 +130,7 @@ a {
 
 .switch_info {
     font-size: 1.15rem;
+    list-style-type: none; /*removes bullet points from lists*/
 }
 
 .cb-slideshow,

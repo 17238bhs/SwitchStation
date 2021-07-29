@@ -12,5 +12,10 @@
         Brand: {{prebuilt.brand}}<br>
         Hot-swap: {{prebuilt.hotswap}}<br>
         RGB: {{prebuilt.rgb}}<br>
+
+        Available switches:
+        {% for switch in prebuilt.switches %}
+            <li>{{ switch.name }}</li>
+        {% endfor %}
     </div>
 {% endblock %}

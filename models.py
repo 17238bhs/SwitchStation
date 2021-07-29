@@ -3,6 +3,11 @@ from routes import db
 # clear table definitions held in memory by metadata object, allows us to declare them again
 db.metadata.clear()
 
+PrebuiltSwitch = db.Table('PrebuiltSwitch', db.Model.metadata,
+                        db.Column('sid', db.Integer, db.ForeignKey('Switch.id')),
+                        db.Column('pid', db.Integer, db.ForeignKey('Prebuilt.id'))
+                        )
+
 class Switch (db.Model):
     __tablename__ = "Switch"
     id = db.Column(db.Integer, primary_key = True)
@@ -17,6 +22,8 @@ class Switch (db.Model):
     pretravel = db.Column(db.Integer())
     totaltravel = db.Column(db.Integer())
 
+    prebuilts = db.relationship('Prebuilt', secondary=PrebuiltSwitch, back_populates='switches')
+
 class Prebuilt (db.Model):
     __tablename__ = "Prebuilt"
     id = db.Column(db.Integer, primary_key = True)
@@ -27,4 +34,4 @@ class Prebuilt (db.Model):
     rgb = db.Column(db.Boolean())
     description = db.Column(db.String())
 
-# prebuilt = db.Table ('prebuilt', db.Column('sid', db.Integer, db.ForeignKey('Switch.id'), primary_key=True), db.Column('pid', db.Integer, db.ForeignKey('Prebuilt.id'), primary_key=True))
+    switches = db.relationship('Switch', secondary=PrebuiltSwitch, back_populates='prebuilts')
