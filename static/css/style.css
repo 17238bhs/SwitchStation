@@ -320,6 +320,10 @@ a {
     float: right;  /* keeps the image to the left */
 }
 
+.center_video {
+    text-align: center;
+}
+
 
 #toc_container { /*table of contents on learn page*/
     background: rgb(37, 34, 34) none repeat scroll 0 0;

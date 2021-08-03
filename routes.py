@@ -18,7 +18,7 @@ def learn():
 
 @app.route('/all_switches')
 def all_switches():
-    results = models.Switch.query.all() #query for all switches
+    results = models.Switch.query.order_by(models.Switch.id.desc()).all() #query for all switches
     return render_template ("all_switches.html", page_title="All Switches", switches = results)
 
 @app.route('/switch/<int:id>')
