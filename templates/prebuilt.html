@@ -1,6 +1,9 @@
 <title>Switch Station - {{prebuilt.name}}</title>
 {% extends 'layout.html' %}
 {% block content %}
+    <div class="prebuilt_image">
+        <img src="/static/images/{{prebuilt.image}}.jpg">
+    </div>
     <div class="switch_title">
         {{prebuilt.name}}
     </div>
@@ -8,12 +11,22 @@
         {{prebuilt.description}}
     </div>
     <div class="switch_info">
-        {{prebuilt.layout}} Layout<br>
-        Brand: {{prebuilt.brand}}<br>
-        Hot-swap: {{prebuilt.hotswap}}<br>
-        RGB: {{prebuilt.rgb}}<br>
+        <table style="width:50%">
+            <tr>
+                <td>{{prebuilt.layout}} Layout</td>
+            </tr>
+            <tr>
+                <td>Brand: {{prebuilt.brand}}</td>
+            </tr>
+            <tr>
+                <td>Hot-swap: {{prebuilt.hotswap}}</td>
+            </tr>
+            <tr>
+                <td>RGB: {{prebuilt.rgb}}</td>
+            </tr>
+        </table>
 
-        Available switches:
+        <br>Available switches:
         {% for switch in prebuilt.switches %}
             <li>{{ switch.name }}</li>
         {% endfor %}

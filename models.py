@@ -33,5 +33,6 @@ class Prebuilt (db.Model):
     hotswap = db.Column(db.Boolean())
     rgb = db.Column(db.Boolean())
     description = db.Column(db.String())
+    image = db.Column(db.String())
 
     switches = db.relationship('Switch', secondary=PrebuiltSwitch, back_populates='prebuilts')

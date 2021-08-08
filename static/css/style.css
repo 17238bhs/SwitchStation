@@ -117,8 +117,10 @@ a {
 }
 
 .switch_title {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
+    margin-top: 9rem;
+    margin-bottom: 12rem;
 }
 
 .switch_description {
@@ -338,4 +340,23 @@ a {
 .toc_title {
     font-weight: 700;
     text-align: center;
+}
+
+table, th, td {
+    border: 0.18rem solid white;
+    text-align: center;
+    border-collapse: collapse; /*single line border*/
+    height: 3rem; /*cell height*/
+    font-size: 1.1rem;
+    margin-left: 25%;
+}
+
+.prebuilt_image img{
+    object-fit: cover;
+    width: 100%;
+    height: 30rem;
+    left: 0px;
+    z-index: -2;
+    top: 90px;
+    position: absolute;
 }
