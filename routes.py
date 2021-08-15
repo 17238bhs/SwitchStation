@@ -36,6 +36,10 @@ def prebuilt(id):
     prebuilt = models.Prebuilt.query.filter_by(id=id).first_or_404() #query for prebuilt with specific id
     return render_template ("prebuilt.html", page_title="Prebuilts", prebuilt = prebuilt)
 
+@app.route('/switch/<int:id>/edit', methods=['GET', 'POST'])
+def edit_switch(id):
+    return render_template ("switch_edit.html", page_title="Edit Switch")
+
 @app.errorhandler(404) #404 error handler, redirects to here when a 404 occurs
 def page_not_found(e):
     return render_template("404.html")
