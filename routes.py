@@ -38,7 +38,8 @@ def prebuilt(id):
 
 @app.route('/switch/<int:id>/edit', methods=['GET', 'POST'])
 def edit_switch(id):
-    return render_template ("switch_edit.html", page_title="Edit Switch")
+    switch = models.Switch.query.filter_by(id=id).first_or_404()
+    return render_template ("switch_edit.html", page_title="Edit Switch", switch = switch)
 
 @app.errorhandler(404) #404 error handler, redirects to here when a 404 occurs
 def page_not_found(e):
