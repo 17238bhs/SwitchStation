@@ -26,6 +26,24 @@ def switch(id):
     switch = models.Switch.query.filter_by(id=id).first_or_404() #query for switch with specified id
     return render_template ("switch.html", page_title="Switches", switch = switch)
 
+@app.route('/add_switch', methods=['GET', 'POST'])
+def add_switch():
+    form = Add_Switch()
+    if request.method=='GET':
+        return render_template('add_switch.html', form=form, title="Add a Switch")
+    else:
+        if form.validate_on_submit():
+            new_switch = models.Switch()
+            new_switch.name = form.name.data
+            new_switch.manufacturer = form.manufacturer.data
+            new_switch.style = form.style.data
+            new_switch.color = form.color.data
+            new_switch.description = form.description.data
+            new_switch.actuation = form..data
+            new_switch.bottomout = form..data
+            new_switch.pretravel = form..data
+            new_switch.totaltravel = form..data
+
 @app.route('/all_prebuilts')
 def all_prebuilts():
     results = models.Prebuilt.query.all() #query for all prebuilts
