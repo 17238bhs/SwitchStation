@@ -4,7 +4,8 @@ from wtforms.validators import DataRequired, Optional, ValidationError
 import models
 from datetime import datetime
 
-class Add_Switch(FlaskForm):
+class Add_Switch(FlaskForm): # Add a switch form
+    # Declaring Fields, validator specifies whether required or optional
     name = TextField('name', validators=[DataRequired()])
     manufacturer = TextField('manufacturer', validators=[DataRequired()])
     style = TextField('style', validators=[DataRequired()])
