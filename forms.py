@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import IntegerField, TextField, SelectField
+from wtforms import IntegerField, TextField, TextAreaField, SelectField
 from wtforms.validators import DataRequired, Optional, ValidationError
 import models
 from datetime import datetime

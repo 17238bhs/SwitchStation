@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
 
@@ -7,6 +7,7 @@ app.config.from_object(Config) # applying all config to app
 db = SQLAlchemy(app)
 
 import models
+from forms import Add_Switch
 
 @app.route('/')
 def home():
@@ -39,10 +40,14 @@ def add_switch():
             new_switch.style = form.style.data
             new_switch.color = form.color.data
             new_switch.description = form.description.data
-            new_switch.actuation = form..data
-            new_switch.bottomout = form..data
-            new_switch.pretravel = form..data
-            new_switch.totaltravel = form..data
+            new_switch.actuation = form.actuation.data
+            new_switch.bottomout = form.bottomout.data
+            new_switch.pretravel = form.pretravel.data
+            new_switch.totaltravel = form.totaltravel.data
+            db.session.commit()
+            return redirect(url_for('switch', ref=new_movie.id))
+        else:
+            return render_template('add_switch.html', form=form, title="Add a Switch")
 
 @app.route('/all_prebuilts')
 def all_prebuilts():
