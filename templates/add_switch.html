@@ -1,5 +1,19 @@
 <title>Switch Station - Add Switch</title>
 {% extends 'layout.html' %}
 {% block content %}
-    Add switch
+    <div class="learn_header">Add A Switch</div>
+
+    <form method="POST" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <p>Name: {{ form.name }} <span style="color:red">{{ form.name.errors }}</span></p>
+    <p>Manufacturer: {{ form.manufacturer }} <span style="color:red">{{ form.manufacturer.errors }}</span></p>
+    <p>Style: {{ form.style }} <span style="color:red">{{ form.style.errors }}</span></p>
+    <p>Color: {{ form.color }} <span style="color:red">{{ form.color.errors }}</span></p>
+    <p>Description: {{ form.description }} <span style="color:red">{{ form.description.errors }}</span></p>
+    <p>Actuation Force: {{ form.actuation }} <span style="color:red">{{ form.actuation.errors }}</span></p>
+    <p>Bottom-Out Force: {{ form.bottomout }} <span style="color:red">{{ form.bottomout.errors }}</span></p>
+    <p>Pretravel (mm): {{ form.pretravel }} <span style="color:red">{{ form.pretravel.errors }}</span></p>
+    <p>Total Travel (mm): {{ form.totaltravel }} <span style="color:red">{{ form.totaltravel.errors }}</span></p>
+    <input type="submit" value="Add this Switch">
+    </form> 
 {% endblock %}
