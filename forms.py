@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import IntegerField, TextField, TextAreaField, SelectField
+from wtforms import IntegerField, TextField, TextAreaField, SelectField, DecimalField
 from wtforms.validators import DataRequired, Optional, ValidationError
 import models
 from datetime import datetime
@@ -11,6 +11,7 @@ class Add_Switch(FlaskForm): # Add a switch form
     style = TextField('style', validators=[DataRequired()])
     color = TextField('color', validators=[DataRequired()])
     description = TextAreaField('description', validators=[Optional()])
+    cost = IntegerField('cost', validators=[DataRequired()])
     actuation = IntegerField('actuation', validators=[Optional()])
     bottomout = IntegerField('bottomout', validators=[Optional()])
     pretravel = IntegerField('pretravel', validators=[Optional()])

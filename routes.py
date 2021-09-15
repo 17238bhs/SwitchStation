@@ -46,7 +46,7 @@ def add_switch():
             new_switch.totaltravel = form.totaltravel.data
             db.session.add(new_switch) # add to database
             db.session.commit() # commit to database
-            return redirect(url_for('switch', ref=new_movie.id)) # send user to new switch page
+            return redirect(url_for('switch', ref=new_switch.id)) # send user to new switch page
         else: # if form is not filled out properly
             return render_template('add_switch.html', form=form, title="Add a Switch")
 
