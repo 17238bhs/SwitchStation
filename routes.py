@@ -40,6 +40,7 @@ def add_switch():
             new_switch.style = form.style.data
             new_switch.color = form.color.data
             new_switch.description = form.description.data
+            new_switch.cost = form.cost.data
             new_switch.actuation = form.actuation.data
             new_switch.bottomout = form.bottomout.data
             new_switch.pretravel = form.pretravel.data
