@@ -5,6 +5,7 @@
 
     <form method="POST" enctype="multipart/form-data">
     {{ form.csrf_token }}
+    <!--Forms for every field with titles, the span is for form errors-->
     <p>Name</p> <p>{{ form.name }} <span style="color:rgb(233, 169, 157)">{{ form.name.errors }}</span></p>
     <p>Manufacturer</p> <p>{{ form.manufacturer }} <span style="color:rgb(233, 169, 157)">{{ form.manufacturer.errors }}</span></p>
     <p>Style</p> <p>{{ form.style }} <span style="color:rgb(233, 169, 157)">{{ form.style.errors }}</span></p>
@@ -15,6 +16,6 @@
     <p>Bottom-Out Force</p> <p>{{ form.bottomout }} <span style="color:rgb(233, 169, 157)">{{ form.bottomout.errors }}</span></p>
     <p>Pretravel (mm)</p> <p>{{ form.pretravel }} <span style="color:rgb(233, 169, 157)">{{ form.pretravel.errors }}</span></p>
     <p>Total Travel (mm)</p> <p>{{ form.totaltravel }} <span style="color:rgb(233, 169, 157)">{{ form.totaltravel.errors }}</span></p>
-    <input type="submit" value="Add this Switch">
+    <input type="submit" value="Add this Switch"> <!--make this prettier pls-->
     </form>
 {% endblock %}

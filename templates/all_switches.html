@@ -4,7 +4,7 @@
 <div class="more_button"><a href="{{url_for('add_switch') }}">Add Switch</a></div>
 <div class="all_switches">
     {% for switch in switches %} <!--for every entry in the switch table-->
-    <a href="/switch/{{switch.id}}">
+    <a href="/switch/{{switch.id}}"> <!--link to given switch-->
         <div class="switch_card">
             {{switch.name}}
         </div>
