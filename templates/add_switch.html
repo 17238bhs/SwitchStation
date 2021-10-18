@@ -8,7 +8,7 @@
     <!--Forms for every field with titles, the span is for form errors-->
     <div class="input_title">Name</div> {{ form.name }} <span style="color:rgb(233, 169, 157)">{{ form.name.errors }}</span>
     <div class="input_title">Manufacturer</div> {{ form.manufacturer }} <span style="color:rgb(233, 169, 157)">{{ form.manufacturer.errors }}</span>
-    
+
     <div class="input_title">Style</div>
     <select id="style" name="style">
         <option value="Linear">Linear</option>
@@ -23,6 +23,7 @@
     <div class="input_title">Bottom-Out Force</div> {{ form.bottomout }} <span style="color:rgb(233, 169, 157)">{{ form.bottomout.errors }}</span>
     <div class="input_title">Pretravel (mm)</div> {{ form.pretravel }} <span style="color:rgb(233, 169, 157)">{{ form.pretravel.errors }}</span>
     <div class="input_title">Total Travel (mm)</div> {{ form.totaltravel }} <span style="color:rgb(233, 169, 157)">{{ form.totaltravel.errors }}</span>
+    <br>
     <input type="submit" value="Add this Switch"> <!--make this prettier pls-->
     </form>
 {% endblock %}
