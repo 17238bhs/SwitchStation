@@ -69,9 +69,9 @@ a {
 
 .home_body {
     background-color: rgb(37, 34, 34);
-    min-height: 15rem;
+    min-height: 10rem;
     padding-top: 3rem;
-    margin-top: 34rem;
+    margin-top: 36rem;
 }
 
 .more_button {  /* this section and the 2 below makes the link look like a button */
@@ -308,11 +308,13 @@ a {
     font-size: 1rem;
     text-align: left;
     padding-left: 4rem;
+    padding-right: 4rem;
 }
 
 .learn_right {
     font-size: 1rem;
     text-align: right;
+    padding-left: 4rem;
     padding-right: 4rem;
 }
 
@@ -360,4 +362,15 @@ table, th, td {
     z-index: -2;
     top: 90px;
     position: absolute;
+}
+
+.input_title {
+    font-size: 1.5rem;
+}
+
+input[type=text], select { /*styling for form input*/
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }

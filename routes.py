@@ -79,7 +79,7 @@ def edit_switch(id):
             new_switch.bottomout = form.bottomout.data
             new_switch.pretravel = form.pretravel.data
             new_switch.totaltravel = form.totaltravel.data
-            db.session.add(new_switch) # add to database
+            db.session.edit(new_switch) # add to database
             db.session.commit() # commit to database
             return redirect(url_for('switch', id=new_switch.id)) # send user to new switch page
         else: # if form is not filled out properly
