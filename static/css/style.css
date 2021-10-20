@@ -147,7 +147,7 @@ a {
 }
 .cb-slideshow:after { 
     content: '';
-    background: transparent url(../images/pattern.png) repeat top left; /*adds a pattern filter over the images*/
+    /*background: transparent url(../images/pattern.png) repeat top left;*/ /*adds a pattern filter over the images*/
 }
 
 .cb-slideshow li span { 
@@ -167,7 +167,7 @@ a {
 
 .cb-slideshow li div { 
     z-index: 1000;
-    position: absolute;
+    /*position: absolute;*/
     bottom: 150px; /*30px*/
     left: 300px; /*0px*/
     width: 100%;
@@ -181,6 +181,7 @@ a {
     font-size: 130px;
     padding: 0;
     line-height: 200px; 
+    position: absolute;
 }
 
 /*define the background images for the spans, along with the animation delay*/
@@ -293,10 +294,22 @@ a {
 }
 
 @media screen and (max-width: 1140px) { /*changes the title font size when window is smaller*/
-    .cb-slideshow li div h3 { font-size: 140px }
+    .cb-slideshow li div h3 { 
+        font-size: 140px;
+        font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+        padding: 0;
+        line-height: 200px; 
+        position: absolute;
+    }
 }
 @media screen and (max-width: 600px) { 
-    .cb-slideshow li div h3 { font-size: 80px }
+    .cb-slideshow li div h3 { 
+        font-size: 80px 
+        font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+        padding: 0;
+        line-height: 200px; 
+        position: absolute;
+    }
 }
 
 .learn_header {
