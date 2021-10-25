@@ -156,6 +156,7 @@ a {
     position: absolute; /*remove these?*/
     top: 0px;
     left: 0px;
+    right: 0;
     color: transparent;
     background-size: cover;
     background-position: 50% 50%;

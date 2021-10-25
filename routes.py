@@ -68,22 +68,22 @@ def edit_switch(id):
         return render_template('edit_switch.html', form=form, title="Edit Switch")
     else: # POST scenario, when submitting info
         if form.validate_on_submit(): # built in validator to check if fields are filled out properly
-            new_switch = models.Switch() # new switch instance
-            new_switch.name = form.name.data # fields for new switch
-            new_switch.manufacturer = form.manufacturer.data
-            new_switch.style = form.style.data
-            new_switch.color = form.color.data
-            new_switch.description = form.description.data
-            new_switch.cost = form.cost.data
-            new_switch.actuation = form.actuation.data
-            new_switch.bottomout = form.bottomout.data
-            new_switch.pretravel = form.pretravel.data
-            new_switch.totaltravel = form.totaltravel.data
-            db.session.edit(new_switch) # add to database
+            switch = models.Switch.query.filter_by(id=id).first_or_404()
+            switch.name = form.name.data # fields for new switch
+            switch.manufacturer = form.manufacturer.data
+            switch.style = form.style.data
+            switch.color = form.color.data
+            switch.description = form.description.data
+            switch.cost = form.cost.data
+            switch.actuation = form.actuation.data
+            switch.bottomout = form.bottomout.data
+            switch.pretravel = form.pretravel.data
+            switch.totaltravel = form.totaltravel.data
+            db.session.merge(switch) # Must merge before committing edits
             db.session.commit() # commit to database
-            return redirect(url_for('switch', id=new_switch.id)) # send user to new switch page
+            return redirect(url_for('switch', id=switch.id)) # send user to new switch page
         else: # if form is not filled out properly
-            return render_template('add_switch.html', form=form, title="Add a Switch")
+            return render_template('edit_switch.html', form=form, title="Edit a Switch")
 
 @app.errorhandler(404) # 404 error handler, redirects to here when a 404 occurs
 def page_not_found(e):
