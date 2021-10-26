@@ -6,16 +6,24 @@
     <form method="POST" enctype="multipart/form-data">
     {{ form.csrf_token }}
     <!--Forms for every field with titles, the span is for form errors-->
-    <p>Name</p> <p>{{ form.name }} <span style="color:rgb(233, 169, 157)">{{ form.name.errors }}</span></p>
-    <p>Manufacturer</p> <p>{{ form.manufacturer }} <span style="color:rgb(233, 169, 157)">{{ form.manufacturer.errors }}</span></p>
-    <p>Style</p> <p>{{ form.style }} <span style="color:rgb(233, 169, 157)">{{ form.style.errors }}</span></p>
-    <p>Color</p> <p>{{ form.color }} <span style="color:rgb(233, 169, 157)">{{ form.color.errors }}</span></p>
-    <p>Description</p> <p>{{ form.description }} <span style="color:rgb(233, 169, 157)">{{ form.description.errors }}</span></p>
-    <p>Cost</p> <p>{{ form.cost }} <span style="color:rgb(233, 169, 157">{{ form.cost.errors}}</span></p>
-    <p>Actuation Force</p> <p>{{ form.actuation }} <span style="color:rgb(233, 169, 157)">{{ form.actuation.errors }}</span></p>
-    <p>Bottom-Out Force</p> <p>{{ form.bottomout }} <span style="color:rgb(233, 169, 157)">{{ form.bottomout.errors }}</span></p>
-    <p>Pretravel (mm)</p> <p>{{ form.pretravel }} <span style="color:rgb(233, 169, 157)">{{ form.pretravel.errors }}</span></p>
-    <p>Total Travel (mm)</p> <p>{{ form.totaltravel }} <span style="color:rgb(233, 169, 157)">{{ form.totaltravel.errors }}</span></p>
+    <div class="input_title">Name</div> {{ form.name }} <span style="color:rgb(233, 169, 157)">{{ form.name.errors }}</span>
+    <div class="input_title">Manufacturer</div> {{ form.manufacturer }} <span style="color:rgb(233, 169, 157)">{{ form.manufacturer.errors }}</span>
+
+    <div class="input_title">Style</div>
+    <select id="style" name="style">
+        <option value="Linear">Linear</option>
+        <option value="Tactile">Tactile</option>
+        <option value="Clicky">Clicky</option>
+    </select> <span style="color:rgb(233, 169, 157)">{{ form.color.errors }}</span>
+
+    <div class="input_title">Color</div> {{ form.color }} <span style="color:rgb(233, 169, 157)">{{ form.color.errors }}</span>
+    <div class="input_title">Description</div> {{ form.description }} <span style="color:rgb(233, 169, 157)">{{ form.description.errors }}</span>
+    <div class="input_title">Cost</div> {{ form.cost }} <span style="color:rgb(233, 169, 157">{{ form.cost.errors}}</span>
+    <div class="input_title">Actuation Force</div> {{ form.actuation }} <span style="color:rgb(233, 169, 157)">{{ form.actuation.errors }}</span>
+    <div class="input_title">Bottom-Out Force</div> {{ form.bottomout }} <span style="color:rgb(233, 169, 157)">{{ form.bottomout.errors }}</span>
+    <div class="input_title">Pretravel (mm)</div> {{ form.pretravel }} <span style="color:rgb(233, 169, 157)">{{ form.pretravel.errors }}</span>
+    <div class="input_title">Total Travel (mm)</div> {{ form.totaltravel }} <span style="color:rgb(233, 169, 157)">{{ form.totaltravel.errors }}</span>
+    <br>
     <input type="submit" value="Submit Edits">
     </form>
 {% endblock %}
