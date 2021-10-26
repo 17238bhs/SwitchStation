@@ -138,8 +138,8 @@ a {
 
 .cb-slideshow,
 .cb-slideshow:after { 
-    position: fixed;
-    width: 100%;
+    position: absolute;
+    width: 50rem;
     height: 100%;
     top: 0px;
     left: 0px;
