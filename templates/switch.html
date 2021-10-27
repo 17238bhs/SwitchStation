@@ -1,7 +1,7 @@
 <title>Switch Station - {{switch.name}}</title>
 {% extends 'layout.html' %}
 {% block content %}
-    <div class="SwitchImage">
+    <div class="SwitchImage"> <!--Icon of switch clipart in background-->
         <img src="/static/images/switchIcon.png">
     </div>
 
@@ -16,7 +16,7 @@
         {{switch.description}}
     </div>
 
-    <div class="SwitchInfo">
+    <div class="SwitchInfo"> <!--switch information shown here, query results-->
         {{switch.style}} Switch<br>
         Manufacturer: {{switch.manufacturer}}<br>
         Actuation: {{switch.actuation}}g<br>
@@ -25,5 +25,5 @@
         Total-travel: {{switch.totaltravel}}mm<br>
         Cost: ${{switch.cost}}USD per switch
     </div>
-    
+
 {% endblock %}
