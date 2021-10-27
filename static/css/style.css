@@ -291,7 +291,7 @@ a {
 	100% { opacity: 0 }
 }
 
-/*usedd for browsers which dont support animations, shows the last slideshow image with full opacity*/
+/*used for browsers which dont support animations, shows the last slideshow image with full opacity*/
 .no-cssanimations .cb-slideshow li span{
 	opacity: 1;
 }
@@ -326,6 +326,13 @@ a {
     text-align: left;
     padding-left: 4rem;
     padding-right: 4rem;
+}
+
+.learn_left img {
+    object-fit: cover;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    width: 100%;
 }
 
 .learn_right {
