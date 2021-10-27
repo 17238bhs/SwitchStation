@@ -1,10 +1,10 @@
 <title>Switch Station - Prebuilts</title>
 {% extends 'layout.html' %}
 {% block content %}
-<div class="all_switches">
+<div class="AllSwitches">
     {% for prebuilt in prebuilts %} <!--for every entry in the prebuilt table-->
     <a href="/prebuilt/{{prebuilt.id}}">
-        <div class="switch_card">
+        <div class="SwitchCard">
             {{prebuilt.name}}
         </div>
     </a>

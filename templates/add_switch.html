@@ -1,28 +1,28 @@
 <title>Switch Station - Add Switch</title>
 {% extends 'layout.html' %}
 {% block content %}
-    <div class="learn_header">Add A Switch</div>
+    <div class="LearnHeader">Add A Switch</div>
 
     <form method="POST" enctype="multipart/form-data">
     {{ form.csrf_token }}
     <!--Forms for every field with titles, the span is for form errors-->
-    <div class="input_title">Name</div> {{ form.name }} <span style="color:rgb(233, 169, 157)">{{ form.name.errors }}</span>
-    <div class="input_title">Manufacturer</div> {{ form.manufacturer }} <span style="color:rgb(233, 169, 157)">{{ form.manufacturer.errors }}</span>
+    <div class="InputTitle">Name</div> {{ form.name }} <span style="color:rgb(233, 169, 157)">{{ form.name.errors }}</span>
+    <div class="InputTitle">Manufacturer</div> {{ form.manufacturer }} <span style="color:rgb(233, 169, 157)">{{ form.manufacturer.errors }}</span>
 
-    <div class="input_title">Style</div>
+    <div class="InputTitle">Style</div>
     <select id="style" name="style">
         <option value="Linear">Linear</option>
         <option value="Tactile">Tactile</option>
         <option value="Clicky">Clicky</option>
     </select> <span style="color:rgb(233, 169, 157)">{{ form.color.errors }}</span>
 
-    <div class="input_title">Color</div> {{ form.color }} <span style="color:rgb(233, 169, 157)">{{ form.color.errors }}</span>
-    <div class="input_title">Description</div> {{ form.description }} <span style="color:rgb(233, 169, 157)">{{ form.description.errors }}</span>
-    <div class="input_title">Cost</div> {{ form.cost }} <span style="color:rgb(233, 169, 157">{{ form.cost.errors}}</span>
-    <div class="input_title">Actuation Force</div> {{ form.actuation }} <span style="color:rgb(233, 169, 157)">{{ form.actuation.errors }}</span>
-    <div class="input_title">Bottom-Out Force</div> {{ form.bottomout }} <span style="color:rgb(233, 169, 157)">{{ form.bottomout.errors }}</span>
-    <div class="input_title">Pretravel (mm)</div> {{ form.pretravel }} <span style="color:rgb(233, 169, 157)">{{ form.pretravel.errors }}</span>
-    <div class="input_title">Total Travel (mm)</div> {{ form.totaltravel }} <span style="color:rgb(233, 169, 157)">{{ form.totaltravel.errors }}</span>
+    <div class="InputTitle">Color</div> {{ form.color }} <span style="color:rgb(233, 169, 157)">{{ form.color.errors }}</span>
+    <div class="InputTitle">Description</div> {{ form.description }} <span style="color:rgb(233, 169, 157)">{{ form.description.errors }}</span>
+    <div class="InputTitle">Cost</div> {{ form.cost }} <span style="color:rgb(233, 169, 157">{{ form.cost.errors}}</span>
+    <div class="InputTitle">Actuation Force</div> {{ form.actuation }} <span style="color:rgb(233, 169, 157)">{{ form.actuation.errors }}</span>
+    <div class="InputTitle">Bottom-Out Force</div> {{ form.bottomout }} <span style="color:rgb(233, 169, 157)">{{ form.bottomout.errors }}</span>
+    <div class="InputTitle">Pretravel (mm)</div> {{ form.pretravel }} <span style="color:rgb(233, 169, 157)">{{ form.pretravel.errors }}</span>
+    <div class="InputTitle">Total Travel (mm)</div> {{ form.totaltravel }} <span style="color:rgb(233, 169, 157)">{{ form.totaltravel.errors }}</span>
     <br>
     <input type="submit" value="Add this Switch">
     </form>

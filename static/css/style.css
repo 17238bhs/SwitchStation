@@ -19,7 +19,7 @@ a {
     text-decoration: none; 
 }
 
-.header {
+.Header {
     height: 4.5rem;
     width: 28.3rem;
     font-size: 1.5rem;
@@ -29,11 +29,11 @@ a {
     margin: 0 auto; /*positions the header in the center*/
 }
 
-.header:hover {
+.Header:hover {
     text-decoration: none;
 }
 
-.header_back {
+.HeaderBack {
     top: 0px;
     position: absolute;
     background-color: rgb(37, 34, 34);
@@ -42,7 +42,7 @@ a {
     z-index: -1;
 }
 
-.navigation {
+.Navigation {
     font-size: 1.4rem;
     word-spacing: 3rem;
     padding-top: 1rem;
@@ -53,7 +53,7 @@ a {
     background-color: rgb(37, 34, 34);
 }
 
-.footer {
+.Footer {
     bottom: 0px;
     left: 30%;
     right: 30%;
@@ -63,18 +63,18 @@ a {
     background-color: rgb(37, 34, 34);
 }
 
-.home_slide {
+.HomeSlide {
     object-fit: cover;
 }
 
-.home_body {
+.HomeBody {
     background-color: rgb(37, 34, 34);
     min-height: 10rem;
     padding-top: 3rem;
     margin-top: 36rem;
 }
 
-.more_button {  /* this section and the 2 below makes the link look like a button */
+.MoreButton {  /* this section and the 2 below makes the link look like a button */
     background-color: var(--rosegold);
     color: white;
     padding: 6px 12px;
@@ -86,24 +86,24 @@ a {
     opacity: 100%;
 }
 
-.more_button:hover { /*button animation on hover*/
+.MoreButton:hover { /*button animation on hover*/
     background-color: rgb(230, 155, 142);
     /*transform: scale(1.05, 1.05);*/
     transition-duration: 1s;
 }
 
-.learn {
+.Learn {
     font-size: 1.2rem;
 }
 
-.all_switches {
+.AllSwitches {
     display: grid;
     grid-gap: 1.5rem;
     grid-template-columns: auto auto auto;
     padding: 1.5rem;
 }
 
-.switch_card {
+.SwitchCard {
     padding: 1rem;
     font-size: 2rem;
     border-style: solid;
@@ -111,12 +111,12 @@ a {
     border-width: 0.35rem;
 }
 
-.switch_card:hover {
+.SwitchCard:hover {
     color: var(--rosegold);
     border-color: var(--rosegold);
 }
 
-.switch_title {
+.SwitchTitle {
     font-size: 4rem;
     font-weight: bold;
     margin-top: 9rem;
@@ -124,20 +124,20 @@ a {
     text-shadow: 4px 4px 8px #000000; /*black text shadow to stand out against bg*/
 }
 
-.switch_description {
+.SwitchDescription {
     font-size: 1.2rem;
     padding: 1rem;
     padding-left: 15rem;
     padding-right: 15rem;
 }
 
-.switch_info {
+.SwitchInfo {
     font-size: 1.15rem;
     list-style-type: none; /*removes bullet points from lists*/
 }
 
-.cb-slideshow,
-.cb-slideshow:after { 
+.CbSlideshow,
+.CbSlideshow:after { 
     position: absolute;
     width: 50rem;
     height: 100%;
@@ -145,12 +145,12 @@ a {
     left: 0px;
     z-index: -2; 
 }
-.cb-slideshow:after { 
+.CbSlideshow:after { 
     content: '';
     /*background: transparent url(../images/pattern.png) repeat top left;*/ /*adds a pattern filter over the images*/
 }
 
-.cb-slideshow li span { 
+.CbSlideshow li span { 
     width: 100%;
     height: 50rem;
     position: fixed;
@@ -166,7 +166,7 @@ a {
     animation: imageAnimation 36s linear infinite 0s; /*animation lasts 36 seconds, runs in an infinite loop*/
 }
 
-.cb-slideshow li div { 
+.CbSlideshow li div { 
     z-index: 1000;
     /*position: absolute;*/
     bottom: 150px; /*30px*/
@@ -177,7 +177,7 @@ a {
     color: #fff;
     animation: titleAnimation 36s linear infinite 0s; /*animation lasts 36 seconds, runs in an infinite loop*/
 }
-.cb-slideshow li div h3 { 
+.CbSlideshow li div h3 { 
     font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
     font-size: 130px;
     padding: 0;
@@ -188,43 +188,43 @@ a {
 }
 
 /*define the background images for the spans, along with the animation delay*/
-.cb-slideshow li:nth-child(1) span { 
+.CbSlideshow li:nth-child(1) span { 
     background-image: url(../images/olivia.png) 
 }
-.cb-slideshow li:nth-child(2) span { 
+.CbSlideshow li:nth-child(2) span { 
     background-image: url(../images/darling.png);
     animation-delay: 6s; /*2nd img plays 6 seconds in*/
 }
-.cb-slideshow li:nth-child(3) span { 
+.CbSlideshow li:nth-child(3) span { 
     background-image: url(../images/noel.png);
     animation-delay: 12s; /*3rd img plays 12 seconds in (6sec after the 2nd)*/
 }
-.cb-slideshow li:nth-child(4) span { 
+.CbSlideshow li:nth-child(4) span { 
     background-image: url(../images/striker.jpg);
     animation-delay: 18s; 
 }
-.cb-slideshow li:nth-child(5) span { 
+.CbSlideshow li:nth-child(5) span { 
     background-image: url(../images/mizu.jpg);
     animation-delay: 24s; 
 }
-.cb-slideshow li:nth-child(6) span { 
+.CbSlideshow li:nth-child(6) span { 
     background-image: url(../images/haku.jpg);
     animation-delay: 30s; 
 }
 
-.cb-slideshow li:nth-child(2) div { 
+.CbSlideshow li:nth-child(2) div { 
     animation-delay: 6s; 
 }
-.cb-slideshow li:nth-child(3) div { 
+.CbSlideshow li:nth-child(3) div { 
     animation-delay: 12s; 
 }
-.cb-slideshow li:nth-child(4) div { 
+.CbSlideshow li:nth-child(4) div { 
     animation-delay: 18s; 
 }
-.cb-slideshow li:nth-child(5) div { 
+.CbSlideshow li:nth-child(5) div { 
     animation-delay: 24s; 
 }
-.cb-slideshow li:nth-child(6) div { 
+.CbSlideshow li:nth-child(6) div { 
     animation-delay: 30s; 
 }
 
@@ -292,12 +292,12 @@ a {
 }
 
 /*used for browsers which dont support animations, shows the last slideshow image with full opacity*/
-.no-cssanimations .cb-slideshow li span{
+.no-cssanimations .CbSlideshow li span{
 	opacity: 1;
 }
 
 @media screen and (max-width: 1140px) { /*changes the title font size when window is smaller*/
-    .cb-slideshow li div h3 { 
+    .CbSlideshow li div h3 { 
         font-size: 140px;
         font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
         padding: 0;
@@ -307,7 +307,7 @@ a {
     }
 }
 @media screen and (max-width: 600px) { 
-    .cb-slideshow li div h3 { 
+    .CbSlideshow li div h3 { 
         font-size: 80px 
         font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
         padding: 0;
@@ -316,45 +316,45 @@ a {
     }
 }
 
-.learn_header {
+.LearnHeader {
     font-size: 2rem;
     padding-top: 1rem;
 }
 
-.learn_left {
+.LearnLeft {
     font-size: 1rem;
     text-align: left;
     padding-left: 4rem;
     padding-right: 4rem;
 }
 
-.learn_left img {
+.LearnLeft img {
     object-fit: cover;
     padding-right: 1rem;
     margin-top: 1rem;
     width: 100%;
 }
 
-.learn_right {
+.LearnRight {
     font-size: 1rem;
     text-align: right;
     padding-left: 4rem;
     padding-right: 4rem;
 }
 
-.learn_right img {
+.LearnRight img {
     object-fit: cover;
     padding-right: 1rem;
     margin-top: 1rem;
     float: right;  /* keeps the image to the left */
 }
 
-.center_video {
+.CenterVideo {
     text-align: center;
 }
 
 
-#toc_container { /*table of contents on learn page*/
+#TocContainer { /*table of contents on learn page*/
     background: rgb(37, 34, 34) none repeat scroll 0 0;
     border: 4px solid white;
     display: table;
@@ -364,7 +364,7 @@ a {
     margin: 1rem 4rem; /*1rem top padding, 4rem left padding*/
 }
 
-.toc_title {
+.TocTitle {
     font-weight: 700;
     text-align: center;
 }
@@ -378,7 +378,7 @@ table, th, td {
     margin-left: 25%;
 }
 
-.switch_image img{
+.SwitchImage img{
     object-fit: contain;
     width: 100%;
     height: 30rem;
@@ -388,7 +388,7 @@ table, th, td {
     position: absolute;
 }
 
-.prebuilt_image img{
+.PrebuiltImage img{
     object-fit: cover;
     width: 100%;
     height: 30rem;
@@ -398,7 +398,7 @@ table, th, td {
     position: absolute;
 }
 
-.input_title {
+.InputTitle {
     font-size: 1.5rem;
 }
 

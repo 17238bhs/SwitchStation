@@ -1,21 +1,21 @@
 <title>Switch Station - {{switch.name}}</title>
 {% extends 'layout.html' %}
 {% block content %}
-    <div class="switch_image">
+    <div class="SwitchImage">
         <img src="/static/images/switchIcon.png">
     </div>
 
-    <div class="switch_title">
+    <div class="SwitchTitle">
         {{switch.name}}
     </div>
     
     <!--button which leads to respective switch edit page-->
-    <a href="/switch/{{switch.id}}/edit"><button class="more_button">Edit Switch</button></a>
+    <a href="/switch/{{switch.id}}/edit"><button class="MoreButton">Edit Switch</button></a>
 
-    <div class="switch_description">
+    <div class="SwitchDescription">
         {{switch.description}}
     </div>
-    <div class="switch_info">
+    <div class="SwitchInfo">
         {{switch.style}} Switch<br>
         Manufacturer: {{switch.manufacturer}}<br>
         Actuation: {{switch.actuation}}g<br>

@@ -1,11 +1,11 @@
 <title>Switch Station - Switches</title>
 {% extends 'layout.html' %}
 {% block content %}
-<div class="more_button"><a href="{{url_for('add_switch') }}">Add Switch</a></div>
-<div class="all_switches">
+<div class="MoreButton"><a href="{{url_for('add_switch') }}">Add Switch</a></div>
+<div class="AllSwitches">
     {% for switch in switches %} <!--for every entry in the switch table-->
     <a href="/switch/{{switch.id}}"> <!--link to given switch-->
-        <div class="switch_card">
+        <div class="SwitchCard">
             {{switch.name}}
         </div>
     </a>
