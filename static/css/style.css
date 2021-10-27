@@ -184,7 +184,7 @@ a {
     line-height: 200px; 
     position: absolute;
     right: 20%;
-    padding-top: 20%;
+    padding-top: 30%;
 }
 
 /*define the background images for the spans, along with the animation delay*/
@@ -303,6 +303,7 @@ a {
         padding: 0;
         line-height: 200px; 
         position: absolute;
+        padding-top: 30%;
     }
 }
 @media screen and (max-width: 600px) { 
