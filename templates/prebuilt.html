@@ -1,15 +1,19 @@
 <title>Switch Station - {{prebuilt.name}}</title>
 {% extends 'layout.html' %}
 {% block content %}
+
     <div class="PrebuiltImage">
         <img src="/static/images/{{prebuilt.image}}.jpg">
     </div>
+
     <div class="SwitchTitle">
         {{prebuilt.name}}
     </div>
+
     <div class="SwitchDescription">
         {{prebuilt.description}}
     </div>
+
     <div class="SwitchInfo">
         <table style="width:50%">
             <tr>
@@ -26,9 +30,10 @@
             </tr>
         </table>
 
-        <br>Available switches:
+        <br>Available switches: <!--Get switches associated with prebuilt from the intermediate table-->
         {% for switch in prebuilt.switches %}
             <li>{{ switch.name }}</li>
         {% endfor %}
     </div>
+
 {% endblock %}

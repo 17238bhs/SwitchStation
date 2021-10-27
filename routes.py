@@ -30,9 +30,12 @@ def switch(id):
 @app.route('/add_switch', methods=['GET', 'POST']) # page can recieve and send info
 def add_switch():
     form = Add_Switch() # using the add switch form
+    
     if request.method=='GET': # looking at the web page 
         return render_template('add_switch.html', form=form, title="Add a Switch")
+
     else: # POST scenario, when submitting info
+
         if form.validate_on_submit(): # built in validator to check if fields are filled out properly
             new_switch = models.Switch() # new switch instance
             new_switch.name = form.name.data # fields for new switch
@@ -48,6 +51,7 @@ def add_switch():
             db.session.add(new_switch) # add to database
             db.session.commit() # commit to database
             return redirect(url_for('switch', id=new_switch.id)) # send user to new switch page
+
         else: # if form is not filled out properly
             return render_template('add_switch.html', form=form, title="Add a Switch")
 
@@ -63,9 +67,12 @@ def prebuilt(id):
 
 @app.route('/switch/<int:id>/edit', methods=['GET', 'POST'])
 def edit_switch(id):
+
     form = Edit_Switch() # using the edit switch form
+
     if request.method=='GET': # looking at the web page 
         return render_template('edit_switch.html', form=form, title="Edit Switch")
+
     else: # POST scenario, when submitting info
         if form.validate_on_submit(): # built in validator to check if fields are filled out properly
             switch = models.Switch.query.filter_by(id=id).first_or_404()
@@ -82,6 +89,7 @@ def edit_switch(id):
             db.session.merge(switch) # Must merge before committing edits
             db.session.commit() # commit to database
             return redirect(url_for('switch', id=switch.id)) # send user to new switch page
+
         else: # if form is not filled out properly
             return render_template('edit_switch.html', form=form, title="Edit a Switch")
 
