@@ -370,6 +370,16 @@ table, th, td {
     margin-left: 25%;
 }
 
+.switch_image img{
+    object-fit: contain;
+    width: 100%;
+    height: 30rem;
+    left: 0px;
+    z-index: -2;
+    top: 130px;
+    position: absolute;
+}
+
 .prebuilt_image img{
     object-fit: cover;
     width: 100%;
