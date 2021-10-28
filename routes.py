@@ -115,8 +115,22 @@ def prebuilt(id):
 def edit_switch(id):
 
     form = Edit_Switch() # using the edit switch form
+    # query to get switch to be edited
+    switch = models.Switch.query.filter_by(id=id).first_or_404()
 
     if request.method=='GET': # if just looking at the web page 
+        # Pre-populate each field with the original switch data
+        form.name.data = switch.name
+        form.manufacturer.data = switch.manufacturer
+        form.style.data = switch.style
+        form.color.data = switch.cost
+        form.description.data = switch.description
+        form.cost.data = switch.cost
+        form.actuation.data = switch.actuation
+        form.bottomout.data = switch.bottomout
+        form.pretravel.data = switch.pretravel
+        form.totaltravel.data = switch.totaltravel
+
         return render_template('edit_switch.html', 
                                 form=form, 
                                 title="Edit Switch")
@@ -124,8 +138,6 @@ def edit_switch(id):
     else: # POST scenario, when submitting info
         # built in validator checks fields are filled out properly
         if form.validate_on_submit():
-            # query to get switch to be edited
-            switch = models.Switch.query.filter_by(id=id).first_or_404()
             switch.name = form.name.data # change field to user input
             switch.manufacturer = form.manufacturer.data
             switch.style = form.style.data
