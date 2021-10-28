@@ -9,13 +9,16 @@ db = SQLAlchemy(app)
 import models
 from forms import Add_Switch, Edit_Switch # import forms from forms.py
 
+
 @app.route('/')
 def home():
     return render_template("home.html", page_title="Home")
 
+
 @app.route('/learn')
 def learn():
     return render_template("learn.html", page_title="learn")
+
 
 @app.route('/all_switches')
 def all_switches():
@@ -25,6 +28,7 @@ def all_switches():
                             page_title="All Switches", 
                             switches = results)
 
+
 @app.route('/switch/<int:id>')
 def switch(id):
     # query for switch with specified id
@@ -32,6 +36,7 @@ def switch(id):
     return render_template ("switch.html", 
                             page_title="Switches", 
                             switch = switch)
+
 
 @app.route('/add_switch', methods=['GET', 'POST']) # page can get & send info
 def add_switch():
@@ -67,12 +72,14 @@ def add_switch():
                                     form=form, 
                                     title="Add a Switch")
 
+
 @app.route('/all_prebuilts')
 def all_prebuilts():
     results = models.Prebuilt.query.all() # query for all prebuilts
     return render_template ("all_prebuilts.html", 
                             page_title="All Prebuilts", 
                             prebuilts = results)
+
 
 @app.route('/prebuilt/<int:id>')
 def prebuilt(id):
@@ -81,6 +88,7 @@ def prebuilt(id):
     return render_template ("prebuilt.html", 
                             page_title="Prebuilts", 
                             prebuilt = prebuilt)
+
 
 @app.route('/switch/<int:id>/edit', methods=['GET', 'POST'])
 def edit_switch(id):
@@ -118,9 +126,11 @@ def edit_switch(id):
                                     form=form, 
                                     title="Edit a Switch")
 
+
 @app.errorhandler(404) # 404 error handler, user sent here when 404 occurs
 def page_not_found(e):
     return render_template("404.html")
+
 
 if __name__ == "__main__":
     app.run(port=3000)
