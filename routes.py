@@ -75,8 +75,8 @@ def edit_switch(id):
 
     else: # POST scenario, when submitting info
         if form.validate_on_submit(): # built in validator to check if fields are filled out properly
-            switch = models.Switch.query.filter_by(id=id).first_or_404()
-            switch.name = form.name.data # fields for new switch
+            switch = models.Switch.query.filter_by(id=id).first_or_404() # get the switch to be edited
+            switch.name = form.name.data # set switch name to whatever the user input
             switch.manufacturer = form.manufacturer.data
             switch.style = form.style.data
             switch.color = form.color.data

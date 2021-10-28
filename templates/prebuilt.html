@@ -7,7 +7,7 @@
     </div>
 
     <div class="SwitchTitle">
-        {{prebuilt.name}}
+        {{prebuilt.name}} <!--name of prebuilt-->
     </div>
 
     <div class="SwitchDescription">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="SwitchInfo">
-        <table style="width:50%">
+        <table style="width:50%"> <!--organise info into a table display-->
             <tr>
                 <td>{{prebuilt.layout}} Layout</td>
             </tr>
@@ -30,8 +30,8 @@
             </tr>
         </table>
 
-        <br>Available switches: <!--Get switches associated with prebuilt from the intermediate table-->
-        {% for switch in prebuilt.switches %}
+        <br>Available switches: <!--Prebuilts come with a range of switch options-->
+        {% for switch in prebuilt.switches %} <!--list all switches which are associated with prebuilt-->
             <li>{{ switch.name }}</li>
         {% endfor %}
     </div>
