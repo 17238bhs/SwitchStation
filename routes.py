@@ -7,7 +7,7 @@ app.config.from_object(Config) # applying all config to app
 db = SQLAlchemy(app)
 
 import models
-from forms import Add_Switch, Edit_Switch # import forms being used from forms.py
+from forms import Add_Switch, Edit_Switch # import forms from forms.py
 
 @app.route('/')
 def home():
@@ -19,24 +19,32 @@ def learn():
 
 @app.route('/all_switches')
 def all_switches():
-    results = models.Switch.query.order_by(models.Switch.id.desc()).all() # query for all switches
-    return render_template ("all_switches.html", page_title="All Switches", switches = results)
+    # query to get all switches
+    results = models.Switch.query.order_by(models.Switch.id.desc()).all()
+    return render_template ("all_switches.html", 
+                            page_title="All Switches", 
+                            switches = results)
 
 @app.route('/switch/<int:id>')
 def switch(id):
-    switch = models.Switch.query.filter_by(id=id).first_or_404() # query for switch with specified id
-    return render_template ("switch.html", page_title="Switches", switch = switch)
+    # query for switch with specified id
+    switch = models.Switch.query.filter_by(id=id).first_or_404()
+    return render_template ("switch.html", 
+                            page_title="Switches", 
+                            switch = switch)
 
-@app.route('/add_switch', methods=['GET', 'POST']) # page can recieve and send info
+@app.route('/add_switch', methods=['GET', 'POST']) # page can get & send info
 def add_switch():
     form = Add_Switch() # using the add switch form
     
     if request.method=='GET': # looking at the web page 
-        return render_template('add_switch.html', form=form, title="Add a Switch")
+        return render_template('add_switch.html', 
+                                form=form, 
+                                title="Add a Switch")
 
     else: # POST scenario, when submitting info
-
-        if form.validate_on_submit(): # built in validator to check if fields are filled out properly
+        # built in validator to check if fields are filled out properly
+        if form.validate_on_submit():
             new_switch = models.Switch() # new switch instance
             new_switch.name = form.name.data # fields for new switch
             new_switch.manufacturer = form.manufacturer.data
@@ -50,33 +58,46 @@ def add_switch():
             new_switch.totaltravel = form.totaltravel.data
             db.session.add(new_switch) # add to database
             db.session.commit() # commit to database
-            return redirect(url_for('switch', id=new_switch.id)) # send user to new switch page
+            # redirect user to newly created switch page
+            return redirect(url_for('switch', 
+                                    id=new_switch.id))
 
         else: # if form is not filled out properly
-            return render_template('add_switch.html', form=form, title="Add a Switch")
+            return render_template('add_switch.html', 
+                                    form=form, 
+                                    title="Add a Switch")
 
 @app.route('/all_prebuilts')
 def all_prebuilts():
     results = models.Prebuilt.query.all() # query for all prebuilts
-    return render_template ("all_prebuilts.html", page_title="All Prebuilts", prebuilts = results)
+    return render_template ("all_prebuilts.html", 
+                            page_title="All Prebuilts", 
+                            prebuilts = results)
 
 @app.route('/prebuilt/<int:id>')
 def prebuilt(id):
-    prebuilt = models.Prebuilt.query.filter_by(id=id).first_or_404() # query for prebuilt with specific id
-    return render_template ("prebuilt.html", page_title="Prebuilts", prebuilt = prebuilt)
+    # query for prebuilt with specific id
+    prebuilt = models.Prebuilt.query.filter_by(id=id).first_or_404()
+    return render_template ("prebuilt.html", 
+                            page_title="Prebuilts", 
+                            prebuilt = prebuilt)
 
 @app.route('/switch/<int:id>/edit', methods=['GET', 'POST'])
 def edit_switch(id):
 
     form = Edit_Switch() # using the edit switch form
 
-    if request.method=='GET': # looking at the web page 
-        return render_template('edit_switch.html', form=form, title="Edit Switch")
+    if request.method=='GET': # if just looking at the web page 
+        return render_template('edit_switch.html', 
+                                form=form, 
+                                title="Edit Switch")
 
     else: # POST scenario, when submitting info
-        if form.validate_on_submit(): # built in validator to check if fields are filled out properly
-            switch = models.Switch.query.filter_by(id=id).first_or_404() # get the switch to be edited
-            switch.name = form.name.data # set switch name to whatever the user input
+        # built in validator checks fields are filled out properly
+        if form.validate_on_submit():
+            # query to get switch to be edited
+            switch = models.Switch.query.filter_by(id=id).first_or_404()
+            switch.name = form.name.data # change field to user input
             switch.manufacturer = form.manufacturer.data
             switch.style = form.style.data
             switch.color = form.color.data
@@ -88,12 +109,16 @@ def edit_switch(id):
             switch.totaltravel = form.totaltravel.data
             db.session.merge(switch) # Must merge before committing edits
             db.session.commit() # commit to database
-            return redirect(url_for('switch', id=switch.id)) # send user to new switch page
+            # send user to the page of the switch being edited
+            return redirect(url_for('switch', 
+                                    id=switch.id))
 
         else: # if form is not filled out properly
-            return render_template('edit_switch.html', form=form, title="Edit a Switch")
+            return render_template('edit_switch.html', 
+                                    form=form, 
+                                    title="Edit a Switch")
 
-@app.errorhandler(404) # 404 error handler, redirects to here when a 404 occurs
+@app.errorhandler(404) # 404 error handler, user sent here when 404 occurs
 def page_not_found(e):
     return render_template("404.html")
 
