@@ -119,7 +119,7 @@ def edit_switch(id):
     switch = models.Switch.query.filter_by(id=id).first_or_404()
 
     if request.method=='GET': # if just looking at the web page 
-        # Pre-populate each field with the original switch data
+        # Pre-populate each field with the existing switch data
         form.name.data = switch.name
         form.manufacturer.data = switch.manufacturer
         form.style.data = switch.style
