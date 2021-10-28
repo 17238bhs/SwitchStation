@@ -1,13 +1,12 @@
 from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
+import models
+from forms import Add_Switch, Edit_Switch # import forms from forms.py
 
 app = Flask(__name__)
 app.config.from_object(Config) # applying all config to app
 db = SQLAlchemy(app)
-
-import models
-from forms import Add_Switch, Edit_Switch # import forms from forms.py
 
 
 @app.route('/')
@@ -55,12 +54,34 @@ def add_switch():
             new_switch.manufacturer = form.manufacturer.data
             new_switch.style = form.style.data
             new_switch.color = form.color.data
-            new_switch.description = form.description.data
             new_switch.cost = form.cost.data
-            new_switch.actuation = form.actuation.data
-            new_switch.bottomout = form.bottomout.data
-            new_switch.pretravel = form.pretravel.data
-            new_switch.totaltravel = form.totaltravel.data
+
+            if form.description.data == "": # if description field is empty
+                new_switch.description = "-" # replace with a dash
+            else:
+                # otherwise, do as normal
+                new_switch.description = form.description.data
+
+            if form.actuation.data == None: # if field is left blank (None)
+                new_switch.actuation = "-" # replace with a dash
+            else:
+                new_switch.actuation = form.actuation.data
+            
+            if form.bottomout.data == None:
+                new_switch.bottomout = "-"
+            else:
+                new_switch.bottomout = form.bottomout.data
+
+            if form.pretravel.data == None:
+                new_switch.pretravel = "-"
+            else:
+                new_switch.pretravel = form.pretravel.data
+
+            if form.totaltravel.data == None:
+                new_switch.totaltravel = "-"
+            else:
+                new_switch.totaltravel = form.totaltravel.data
+
             db.session.add(new_switch) # add to database
             db.session.commit() # commit to database
             # redirect user to newly created switch page
@@ -109,12 +130,34 @@ def edit_switch(id):
             switch.manufacturer = form.manufacturer.data
             switch.style = form.style.data
             switch.color = form.color.data
-            switch.description = form.description.data
             switch.cost = form.cost.data
-            switch.actuation = form.actuation.data
-            switch.bottomout = form.bottomout.data
-            switch.pretravel = form.pretravel.data
-            switch.totaltravel = form.totaltravel.data
+
+            if form.description.data == "": # if description field is empty
+                switch.description = "-" # replace with a dash
+            else:
+                # otherwise, do as normal
+                switch.description = form.description.data
+
+            if form.actuation.data == None: # if field is left blank (None)
+                switch.actuation = "-" # replace with a dash
+            else:
+                switch.actuation = form.actuation.data
+            
+            if form.bottomout.data == None:
+                switch.bottomout = "-"
+            else:
+                switch.bottomout = form.bottomout.data
+
+            if form.pretravel.data == None:
+                switch.pretravel = "-"
+            else:
+                switch.pretravel = form.pretravel.data
+
+            if form.totaltravel.data == None:
+                switch.totaltravel = "-"
+            else:
+                switch.totaltravel = form.totaltravel.data
+                
             db.session.merge(switch) # Must merge before committing edits
             db.session.commit() # commit to database
             # send user to the page of the switch being edited
