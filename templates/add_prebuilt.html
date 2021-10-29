@@ -1,0 +1,20 @@
+<title>Switch Station - Add Prebuilt</title>
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="LearnHeader">Add A Prebuilt</div>
+
+    <form method="POST" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <!--Forms for every field with titles, the span is for form errors-->
+    <div class="InputTitle">Name</div> {{ form.name }} <span style="color:rgb(233, 169, 157)">{{ form.name.errors }}</span>
+    <div class="InputTitle">Layout</div> {{ form.layout }} <span style="color:rgb(233, 169, 157)">{{ form.layout.errors }}</span>
+    <div class="InputTitle">Brand</div> {{ form.brand }} <span style="color:rgb(233, 169, 157)">{{ form.brand.errors }}</span>
+    <div class="InputTitle">Hotswap</div> {{ form.hotswap }} <span style="color:rgb(233, 169, 157)">{{ form.hotswap.errors }}</span>
+    <div class="InputTitle">RGB</div> {{ form.rgb }} <span style="color:rgb(233, 169, 157">{{ form.rgb.errors}}</span>
+    <div class="InputTitle">Description</div> {{ form.description }} <span style="color:rgb(233, 169, 157)">{{ form.description.errors }}</span>
+    <div class="InputTitle">Image</div> {{ form.image }} <span style="color:rgb(233, 169, 157)">{{ form.image.errors }}</span>
+    <br>
+    
+    <input type="submit" value="Add this Prebuilt">
+    </form>
+{% endblock %}

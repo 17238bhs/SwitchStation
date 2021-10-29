@@ -94,23 +94,6 @@ def add_switch():
                                     title="Add a Switch")
 
 
-@app.route('/all_prebuilts')
-def all_prebuilts():
-    results = models.Prebuilt.query.all() # query for all prebuilts
-    return render_template ("all_prebuilts.html", 
-                            page_title="All Prebuilts", 
-                            prebuilts = results)
-
-
-@app.route('/prebuilt/<int:id>')
-def prebuilt(id):
-    # query for prebuilt with specific id
-    prebuilt = models.Prebuilt.query.filter_by(id=id).first_or_404()
-    return render_template ("prebuilt.html", 
-                            page_title="Prebuilts", 
-                            prebuilt = prebuilt)
-
-
 @app.route('/switch/<int:id>/edit', methods=['GET', 'POST'])
 def edit_switch(id):
 
@@ -123,7 +106,7 @@ def edit_switch(id):
         form.name.data = switch.name
         form.manufacturer.data = switch.manufacturer
         form.style.data = switch.style
-        form.color.data = switch.cost
+        form.color.data = switch.color
         form.description.data = switch.description
         form.cost.data = switch.cost
         form.actuation.data = switch.actuation
@@ -180,6 +163,23 @@ def edit_switch(id):
             return render_template('edit_switch.html', 
                                     form=form, 
                                     title="Edit a Switch")
+
+
+@app.route('/all_prebuilts')
+def all_prebuilts():
+    results = models.Prebuilt.query.all() # query for all prebuilts
+    return render_template ("all_prebuilts.html", 
+                            page_title="All Prebuilts", 
+                            prebuilts = results)
+
+
+@app.route('/prebuilt/<int:id>')
+def prebuilt(id):
+    # query for prebuilt with specific id
+    prebuilt = models.Prebuilt.query.filter_by(id=id).first_or_404()
+    return render_template ("prebuilt.html", 
+                            page_title="Prebuilts", 
+                            prebuilt = prebuilt)
 
 
 @app.errorhandler(404) # 404 error handler, user sent here when 404 occurs
